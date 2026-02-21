@@ -745,7 +745,6 @@
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = form.querySelector('button[type="submit"]');
-            const original = btn.innerHTML;
 
             // Loading state
             btn.innerHTML = '<span>Enviando...</span>';
@@ -766,24 +765,60 @@
                 const data = await response.json();
 
                 if (data.success) {
-                    btn.innerHTML = '<span>✓ Inscrito!</span>';
-                    btn.style.background = '#10B981';
-                    form.reset();
+                    showSuccessOverlay();
                 } else {
                     btn.innerHTML = '<span>✗ ' + data.message + '</span>';
                     btn.style.background = '#EF4444';
+                    setTimeout(() => {
+                        btn.innerHTML = '<span>Quero Começar Agora</span>';
+                        btn.style.background = '';
+                        btn.disabled = false;
+                    }, 3000);
                 }
             } catch (error) {
                 btn.innerHTML = '<span>✗ Erro ao enviar</span>';
                 btn.style.background = '#EF4444';
+                setTimeout(() => {
+                    btn.innerHTML = '<span>Quero Começar Agora</span>';
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
             }
-
-            setTimeout(() => {
-                btn.innerHTML = original;
-                btn.style.background = '';
-                btn.disabled = false;
-            }, 3000);
         });
+    }
+
+    function showSuccessOverlay() {
+        const overlay = document.createElement('div');
+        overlay.className = 'success-overlay';
+        overlay.innerHTML = `
+            <div class="success-content">
+                <div class="success-checkmark">
+                    <svg viewBox="0 0 52 52">
+                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+                <h2>Inscrição Confirmada!</h2>
+                <p>Bem-vindo ao DevLab Tech Academy</p>
+                <span class="redirect-text">Redirecionando em <span id="countdown">3</span>s...</span>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        // Trigger animation
+        requestAnimationFrame(() => overlay.classList.add('active'));
+
+        // Countdown
+        let count = 3;
+        const countdownEl = document.getElementById('countdown');
+        const interval = setInterval(() => {
+            count--;
+            countdownEl.textContent = count;
+            if (count <= 0) {
+                clearInterval(interval);
+                window.location.href = 'https://devlab.leonardomdev.me';
+            }
+        }, 1000);
     }
 
     // ========================================
