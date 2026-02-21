@@ -2,9 +2,9 @@
 // Configuração do Banco de Dados
 // Substitua com suas credenciais
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'devlab_newsletter');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_NAME', 'd3f4ltco_newsletter_devlab');
+define('DB_USER', 'd3f4ltco_newsletter_devlab');
+define('DB_PASS', 'zEaq25SKp7AqTADkMAdN');
 
 // Conexão PDO
 function getConnection() {

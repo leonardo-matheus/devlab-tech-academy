@@ -1,7 +1,5 @@
--- Criar banco de dados
-CREATE DATABASE IF NOT EXISTS devlab_newsletter CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-USE devlab_newsletter;
+-- Usar banco de dados existente
+USE d3f4ltco_newsletter_devlab;
 
 -- Tabela de inscritos
 CREATE TABLE IF NOT EXISTS subscribers (
