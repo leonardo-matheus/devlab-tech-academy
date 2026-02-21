@@ -742,14 +742,47 @@
         const form = document.getElementById('signupForm');
         if (!form) return;
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = form.querySelector('button[type="submit"]');
             const original = btn.innerHTML;
-            btn.innerHTML = '<span>✓ Inscrito!</span>';
-            btn.style.background = '#10B981';
+
+            // Loading state
+            btn.innerHTML = '<span>Enviando...</span>';
             btn.disabled = true;
-            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.disabled = false; form.reset(); }, 3000);
+
+            const formData = {
+                name: form.querySelector('input[name="name"]').value,
+                email: form.querySelector('input[name="email"]').value
+            };
+
+            try {
+                const response = await fetch('api/subscribe.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    btn.innerHTML = '<span>✓ Inscrito!</span>';
+                    btn.style.background = '#10B981';
+                    form.reset();
+                } else {
+                    btn.innerHTML = '<span>✗ ' + data.message + '</span>';
+                    btn.style.background = '#EF4444';
+                }
+            } catch (error) {
+                btn.innerHTML = '<span>✗ Erro ao enviar</span>';
+                btn.style.background = '#EF4444';
+            }
+
+            setTimeout(() => {
+                btn.innerHTML = original;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 3000);
         });
     }
 
