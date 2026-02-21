@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Gratuito - DevLab Tech Academy</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <meta name="theme-color" content="#0D9488">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Aprenda programação do zero com o curso gratuito da DevLab Tech Academy. HTML, CSS, JavaScript e muito mais. Comece sua carreira em tecnologia hoje!">
+    <meta name="keywords" content="curso programação gratuito, aprender programar, devlab, html css javascript, curso desenvolvimento web">
+    <meta name="author" content="DevLab Tech Academy">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Curso Gratuito de Programação - DevLab Tech Academy">
+    <meta property="og:description" content="Aprenda programação do zero com projetos práticos. 100% gratuito com certificado.">
+    <meta property="og:image" content="favicon/android-chrome-512x512.png">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="DevLab" class="logo-img">
+            </div>
+            <a href="#inscricao" class="nav-cta">Quero me Inscrever</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+
+        <div class="floating-elements">
+            <div class="flask flask1" data-speed="2">
+                <svg viewBox="0 0 100 140" fill="none">
+                    <path d="M35 10h30v40l25 70c2 6-2 12-8 12H18c-6 0-10-6-8-12l25-70V10z" stroke="url(#grad1)" stroke-width="3" fill="rgba(13,148,136,0.1)"/>
+                    <rect x="30" y="5" width="40" height="10" rx="2" stroke="url(#grad1)" stroke-width="2" fill="none"/>
+                    <defs><linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs>
+                </svg>
+            </div>
+            <div class="orb orb1" data-speed="3"></div>
+            <div class="orb orb2" data-speed="1.5"></div>
+            <div class="orb orb3" data-speed="2.5"></div>
+            <div class="orb orb4" data-speed="2"></div>
+            <div class="circuit circuit1"></div>
+            <div class="circuit circuit2"></div>
+            <div class="atom atom1">
+                <div class="electron"></div>
+                <div class="electron"></div>
+                <div class="electron"></div>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="badge animate-on-scroll">
+                <span class="badge-free">100% GRATUITO</span>
+            </div>
+            <h1 class="animate-on-scroll">
+                Comece sua jornada na <span class="gradient-text">programação</span> hoje mesmo
+            </h1>
+            <p class="hero-subtitle animate-on-scroll">
+                Aprenda os fundamentos da programação do zero, com projetos práticos e uma metodologia que realmente funciona. Seu laboratório de tecnologia te espera.
+            </p>
+            <div class="hero-cta animate-on-scroll">
+                <a href="#inscricao" class="btn btn-primary">
+                    <span>Começar Agora - É Grátis</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#video" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <span>Assistir Apresentação</span>
+                </a>
+            </div>
+            <div class="hero-stats animate-on-scroll">
+                <div class="stat">
+                    <span class="stat-number" data-count="15000">0</span>
+                    <span class="stat-label">Alunos</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-label">Aulas</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="20">0</span>
+                    <span class="stat-label">Horas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section" id="video">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Conheça o DevLab</span>
+                <h2>Veja como funciona nosso método</h2>
+                <p>Assista ao vídeo e descubra por que milhares de pessoas escolheram o DevLab para iniciar sua carreira em tecnologia.</p>
+            </div>
+            <div class="video-wrapper animate-on-scroll">
+                <div class="video-frame">
+                    <!-- Substitua VIDEO_ID pelo ID do seu vídeo do YouTube -->
+                    <iframe
+                        src="https://www.youtube.com/embed/VIDEO_ID?rel=0"
+                        title="DevLab - Curso Gratuito de Programação"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Por que DevLab?</span>
+                <h2>Tudo que você precisa para começar</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card animate-on-scroll" data-delay="0">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Do Zero ao Código</h3>
+                    <p>Não precisa de experiência prévia. Começamos do absoluto zero e avançamos juntos.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll" data-delay="100">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M8 21h8M12 17v4"/>
+                        </svg>
+                    </div>
+                    <h3>Projetos Práticos</h3>
+                    <p>Aprenda fazendo. Cada módulo tem projetos reais para você colocar em prática.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll" data-delay="200">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Comunidade Ativa</h3>
+                    <p>Tire dúvidas e conecte-se com outros alunos na nossa comunidade exclusiva.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll" data-delay="300">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3>Certificado Incluso</h3>
+                    <p>Receba seu certificado de conclusão para adicionar ao seu currículo e LinkedIn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">O que você vai aprender</span>
+                <h2>Conteúdo do Curso Gratuito</h2>
+            </div>
+            <div class="curriculum-grid">
+                <div class="module-card animate-on-scroll" data-delay="0">
+                    <div class="module-number">01</div>
+                    <div class="module-content">
+                        <h3>Lógica de Programação</h3>
+                        <ul>
+                            <li>Pensamento computacional</li>
+                            <li>Algoritmos e fluxogramas</li>
+                            <li>Variáveis e tipos de dados</li>
+                            <li>Estruturas condicionais</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="module-card animate-on-scroll" data-delay="100">
+                    <div class="module-number">02</div>
+                    <div class="module-content">
+                        <h3>HTML & CSS</h3>
+                        <ul>
+                            <li>Estrutura de páginas web</li>
+                            <li>Tags e semântica HTML5</li>
+                            <li>Estilização com CSS3</li>
+                            <li>Layouts responsivos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="module-card animate-on-scroll" data-delay="200">
+                    <div class="module-number">03</div>
+                    <div class="module-content">
+                        <h3>JavaScript Básico</h3>
+                        <ul>
+                            <li>Sintaxe e fundamentos</li>
+                            <li>Manipulação do DOM</li>
+                            <li>Eventos e interatividade</li>
+                            <li>Projeto final integrador</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Depoimentos</span>
+                <h2>O que nossos alunos dizem</h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-content">
+                        <p>"Nunca imaginei que conseguiria aprender a programar. O DevLab tornou tudo mais simples e prático. Em 3 meses já consegui meu primeiro emprego como dev júnior!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MS</div>
+                        <div class="author-info">
+                            <strong>Marina Silva</strong>
+                            <span>Desenvolvedora Front-end</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-content">
+                        <p>"A didática é incrível. Comecei do zero absoluto e hoje trabalho com desenvolvimento web. O curso gratuito foi só o começo da minha jornada."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RC</div>
+                        <div class="author-info">
+                            <strong>Rafael Costa</strong>
+                            <span>Full Stack Developer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-content">
+                        <p>"Aos 42 anos decidi mudar de carreira. O DevLab me deu a base que eu precisava. A comunidade é super acolhedora e os projetos práticos fazem toda diferença."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PL</div>
+                        <div class="author-info">
+                            <strong>Patricia Lima</strong>
+                            <span>Desenvolvedora Back-end</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="inscricao">
+        <div class="cta-bg">
+            <div class="cta-orb cta-orb1"></div>
+            <div class="cta-orb cta-orb2"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <span class="cta-badge">Vagas Limitadas</span>
+                <h2>Pronto para começar sua jornada?</h2>
+                <p>Inscreva-se agora no curso gratuito e dê o primeiro passo para transformar sua carreira em tecnologia.</p>
+
+                <form class="signup-form" id="signupForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <span>Quero Começar Agora</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <span>100% Gratuito</span>
+                    </div>
+                    <div class="cta-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <span>Acesso Imediato</span>
+                    </div>
+                    <div class="cta-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <span>Certificado Incluso</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="DevLab" class="footer-logo">
+                    <p>Seu laboratório de tecnologia. Transformando vidas através da educação em programação.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Contato</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DevLab Tech Academy. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
