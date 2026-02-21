@@ -11,11 +11,15 @@
     // ========================================
 
     const CONFIG = {
-        layers: [
-            { name: 'back', count: 140, speedMultiplier: 0.25, opacity: 0.06, sizeMultiplier: 0.7, zIndex: 0 },
-            { name: 'middle', count: 200, speedMultiplier: 0.45, opacity: 0.12, sizeMultiplier: 1.0, zIndex: 1 },
-            { name: 'front', count: 100, speedMultiplier: 0.7, opacity: 0.22, sizeMultiplier: 1.3, zIndex: 2 }
-        ],
+        layers: (() => {
+            const isMobile = window.innerWidth < 768;
+            const countScale = isMobile ? 0.4 : 1;
+            return [
+                { name: 'back', count: Math.floor(140 * countScale), speedMultiplier: 0.25, opacity: 0.06, sizeMultiplier: 0.7, zIndex: 0 },
+                { name: 'middle', count: Math.floor(200 * countScale), speedMultiplier: 0.45, opacity: 0.12, sizeMultiplier: 1.0, zIndex: 1 },
+                { name: 'front', count: Math.floor(100 * countScale), speedMultiplier: 0.7, opacity: 0.22, sizeMultiplier: 1.3, zIndex: 2 }
+            ];
+        })(),
         connectionDistance: 180,
         crossLayerConnection: 130,
         mouseConnectionDistance: 250,
@@ -187,14 +191,16 @@
         createElement(layerConfig) {
             const type = ELEMENT_TYPES[Math.floor(Math.random() * ELEMENT_TYPES.length)];
 
-            // Base sizes per type
+            // Base sizes per type - menor no mobile
+            const isMobile = window.innerWidth < 768;
+            const mobileScale = isMobile ? 0.5 : 1;
             const baseSizes = {
-                dot: 5,
-                symbol: 18,
-                flask: 36,
-                molecule: 34,
-                hexagon: 32,
-                bracket: 28
+                dot: 8 * mobileScale,
+                symbol: 28 * mobileScale,
+                flask: 52 * mobileScale,
+                molecule: 48 * mobileScale,
+                hexagon: 46 * mobileScale,
+                bracket: 42 * mobileScale
             };
             const baseSize = baseSizes[type] || 14;
 
