@@ -353,6 +353,38 @@ body {
     background-clip: text;
 }
 
+/* Dynamic Text Animation */
+.dynamic-text {
+    display: inline-block;
+    position: relative;
+    min-width: 280px;
+}
+
+.dynamic-text::after {
+    content: '|';
+    position: absolute;
+    right: -8px;
+    animation: blink 0.8s infinite;
+    color: var(--teal-light);
+    -webkit-text-fill-color: var(--teal-light);
+}
+
+.dynamic-text.typing::after {
+    animation: blink 0.4s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .dynamic-text {
+        min-width: 200px;
+        display: block;
+    }
+}
+
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--text-secondary);

@@ -615,6 +615,62 @@
     }
 
     // ========================================
+    // Dynamic Text Typewriter
+    // ========================================
+
+    function initDynamicText() {
+        const element = document.getElementById('dynamicText');
+        if (!element) return;
+
+        const words = [
+            'programação',
+            'tecnologia',
+            'código',
+            'desenvolvimento',
+            'inovação',
+            'carreira tech',
+            'web dev',
+            'futuro'
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let currentWord = words[0];
+
+        function type() {
+            currentWord = words[wordIndex];
+
+            if (isDeleting) {
+                element.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+                element.classList.add('typing');
+            } else {
+                element.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                element.classList.add('typing');
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+                element.classList.remove('typing');
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500; // Pause before next word
+                element.classList.remove('typing');
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        setTimeout(type, 1500); // Start after page load
+    }
+
+    // ========================================
     // UI Initializations
     // ========================================
 
@@ -742,6 +798,7 @@
             initSmoothScroll();
             initForm();
             initThemeToggle();
+            initDynamicText();
             console.log('🧪 DevLab Multi-Layer Canvas v3 Loaded');
         }, 100);
     });
