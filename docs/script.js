@@ -12,9 +12,9 @@
 
     const CONFIG = {
         layers: [
-            { name: 'back', count: 140, speedMultiplier: 0.25, opacity: 0.06, sizeMultiplier: 0.5, zIndex: 0 },
-            { name: 'middle', count: 200, speedMultiplier: 0.45, opacity: 0.12, sizeMultiplier: 0.75, zIndex: 1 },
-            { name: 'front', count: 100, speedMultiplier: 0.7, opacity: 0.22, sizeMultiplier: 1.0, zIndex: 2 }
+            { name: 'back', count: 140, speedMultiplier: 0.25, opacity: 0.06, sizeMultiplier: 0.7, zIndex: 0 },
+            { name: 'middle', count: 200, speedMultiplier: 0.45, opacity: 0.12, sizeMultiplier: 1.0, zIndex: 1 },
+            { name: 'front', count: 100, speedMultiplier: 0.7, opacity: 0.22, sizeMultiplier: 1.3, zIndex: 2 }
         ],
         connectionDistance: 180,
         crossLayerConnection: 130,
@@ -189,24 +189,24 @@
 
             // Base sizes per type
             const baseSizes = {
-                dot: 3,
-                symbol: 12,
-                flask: 24,
-                molecule: 22,
-                hexagon: 20,
-                bracket: 18
+                dot: 5,
+                symbol: 18,
+                flask: 36,
+                molecule: 34,
+                hexagon: 32,
+                bracket: 28
             };
             const baseSize = baseSizes[type] || 14;
 
-            // Size variation: small (0.4-0.7), medium (0.8-1.2), large (1.3-1.8)
+            // Size variation: small (0.5-0.8), medium (0.9-1.4), large (1.5-2.2)
             const sizeCategory = Math.random();
             let sizeVariation;
-            if (sizeCategory < 0.4) {
-                sizeVariation = 0.4 + Math.random() * 0.3; // Small: 40%
-            } else if (sizeCategory < 0.8) {
-                sizeVariation = 0.8 + Math.random() * 0.4; // Medium: 40%
+            if (sizeCategory < 0.3) {
+                sizeVariation = 0.5 + Math.random() * 0.3; // Small: 30%
+            } else if (sizeCategory < 0.7) {
+                sizeVariation = 0.9 + Math.random() * 0.5; // Medium: 40%
             } else {
-                sizeVariation = 1.3 + Math.random() * 0.5; // Large: 20%
+                sizeVariation = 1.5 + Math.random() * 0.7; // Large: 30%
             }
 
             return {
