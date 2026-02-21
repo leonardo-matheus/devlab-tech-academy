@@ -12,9 +12,9 @@
 
     const CONFIG = {
         layers: [
-            { name: 'back', count: 80, speedMultiplier: 0.25, opacity: 0.06, sizeMultiplier: 0.5, zIndex: 0 },
-            { name: 'middle', count: 120, speedMultiplier: 0.45, opacity: 0.12, sizeMultiplier: 0.75, zIndex: 1 },
-            { name: 'front', count: 60, speedMultiplier: 0.7, opacity: 0.22, sizeMultiplier: 1.0, zIndex: 2 }
+            { name: 'back', count: 140, speedMultiplier: 0.25, opacity: 0.06, sizeMultiplier: 0.5, zIndex: 0 },
+            { name: 'middle', count: 200, speedMultiplier: 0.45, opacity: 0.12, sizeMultiplier: 0.75, zIndex: 1 },
+            { name: 'front', count: 100, speedMultiplier: 0.7, opacity: 0.22, sizeMultiplier: 1.0, zIndex: 2 }
         ],
         connectionDistance: 180,
         crossLayerConnection: 130,
@@ -35,17 +35,57 @@
     // ========================================
 
     const CODE_SYMBOLS = [
+        // Syntax
         '</>', '{;}', '[]', '()', '&&', '||', '=>', '::', '++', '--',
         'var', 'let', 'const', 'fn', 'def', 'class', 'pub', 'mod',
         '$_', '#!', '@@', '/*', '*/', '<?', '?>', '/>', '<!',
+        '~/', './', '../', '|>', '->', '<-', '>>>', '<<<', '??',
+
+        // Package managers & CLI
         'sudo', 'npm', 'npx', 'cargo', 'pip', 'yarn', 'pnpm', 'git',
         'build', 'deploy', 'push', 'pull', 'fetch', 'merge', 'init',
+        'brew', 'apt', 'dnf', 'snap', 'wget', 'curl', 'ssh', 'scp',
+
+        // Keywords
         'async', 'await', 'return', 'export', 'import', 'from', 'use',
-        '0x', '0b', '#!/', 'API', 'GET', 'POST', 'PUT', 'SQL', 'SSH',
         'if', 'else', 'for', 'loop', 'match', 'try', 'catch', 'throw',
-        '.js', '.ts', '.rs', '.py', '.go', '.vue', '.jsx', '.tsx',
         'run', 'test', 'dev', 'prod', 'env', 'src', 'lib', 'pkg',
-        '~/', './', '../', '|>', '->', '<-', '>>>', '<<<', '??'
+
+        // Protocols & APIs
+        '0x', '0b', '#!/', 'API', 'GET', 'POST', 'PUT', 'SQL', 'SSH',
+        'REST', 'gRPC', 'WS', 'TCP', 'UDP', 'HTTP', 'DNS', 'TLS',
+
+        // Extensions
+        '.js', '.ts', '.rs', '.py', '.go', '.vue', '.jsx', '.tsx',
+        '.cpp', '.rb', '.php', '.kt', '.swift', '.cs', '.java', '.sql',
+
+        // Frameworks & Libraries
+        'React', 'Vue', 'Next', 'Nuxt', 'Svelte', 'Solid', 'Astro',
+        'Node', 'Deno', 'Bun', 'Express', 'Fastify', 'Nest', 'Hono',
+        'Django', 'Flask', 'FastAPI', 'Rails', 'Laravel', 'Spring',
+        'Prisma', 'Drizzle', 'TypeORM', 'Mongoose', 'Redis', 'Kafka',
+
+        // DevOps & Cloud
+        'Docker', 'K8s', 'AWS', 'GCP', 'Azure', 'Vercel', 'Netlify',
+        'CI/CD', 'Nginx', 'Linux', 'Bash', 'Zsh', 'Vim', 'Neovim',
+        'Terraform', 'Ansible', 'Pulumi', 'Helm', 'ArgoCD', 'Jenkins',
+
+        // Languages
+        'Rust', 'Go', 'Python', 'TypeScript', 'Kotlin', 'Swift', 'Zig',
+        'C++', 'C#', 'Java', 'Scala', 'Elixir', 'Haskell', 'OCaml',
+
+        // Databases
+        'Postgres', 'MySQL', 'MongoDB', 'SQLite', 'Supabase', 'Firebase',
+        'DynamoDB', 'Cassandra', 'Neo4j', 'ClickHouse', 'Elastic',
+
+        // AI/ML
+        'GPT', 'LLM', 'PyTorch', 'TensorFlow', 'Pandas', 'NumPy',
+        'Scikit', 'Keras', 'Hugging', 'OpenAI', 'LangChain', 'Vector',
+
+        // Tools
+        'ESLint', 'Prettier', 'Webpack', 'Vite', 'Turbo', 'esbuild',
+        'Jest', 'Vitest', 'Cypress', 'Playwright', 'Storybook', 'Figma',
+        'GitHub', 'GitLab', 'Jira', 'Notion', 'Slack', 'Discord'
     ];
 
     const ELEMENT_TYPES = ['symbol', 'symbol', 'symbol', 'symbol', 'dot', 'flask', 'molecule', 'hexagon', 'bracket'];
